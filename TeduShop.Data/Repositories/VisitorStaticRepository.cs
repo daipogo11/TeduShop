@@ -3,7 +3,9 @@ using TeduShop.Model.Models;
 
 namespace TeduShop.Data.Repositories
 {
-    public class VisitorStaticRepository : RepositoryBase<VisitorStatic>
+    public interface IVisitorStaticRepository : IRepository<VisitorStatic> { }
+
+    public class VisitorStaticRepository : RepositoryBase<VisitorStatic>, IVisitorStaticRepository
     {
         public VisitorStaticRepository(IDbFactory dbFactory) : base(dbFactory)
         {
